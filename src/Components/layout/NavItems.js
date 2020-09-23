@@ -10,7 +10,7 @@ function NavItems() {
     return (
       <>
         <Link
-          to="/todo/signin"
+          to="/signin"
           className="nav-link"
           onClick={() => {
             dispatch(signOut());
@@ -25,10 +25,10 @@ function NavItems() {
   }
   return (
     <>
-      <Link to="/todo/signin" className="nav-link">
+      <Link to="/signin" className="nav-link">
         Signin
       </Link>
-      <Link to="/todo/signup" className="nav-link">
+      <Link to="/signup" className="nav-link">
         Signup
       </Link>
     </>

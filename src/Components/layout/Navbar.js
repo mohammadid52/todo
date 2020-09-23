@@ -9,8 +9,8 @@ function Navbar() {
       bg="light"
       variant="light"
     >
-      <Link to="/todo/" className="navbar-brand">
-        <h3>Todo App</h3>
+      <Link to="/" className="navbar-brand">
+        <h3>Todoss App</h3>
       </Link>
       <NavItems />
     </BootstrapNavbar>

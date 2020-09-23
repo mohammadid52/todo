@@ -22,7 +22,7 @@ function Signin() {
 
   const { email, password } = values;
   if (uid) {
-    return <Redirect to="/todo/" />;
+    return <Redirect to="/" />;
   }
   return (
     <MyForm onSubmit={handleSubmit}>
