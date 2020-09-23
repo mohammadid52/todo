@@ -9,7 +9,7 @@ function Navbar() {
       bg="light"
       variant="light"
     >
-      <Link to="/" className="navbar-brand">
+      <Link to="/dashboard" className="navbar-brand">
         <h3>Todoss App</h3>
       </Link>
       <NavItems />

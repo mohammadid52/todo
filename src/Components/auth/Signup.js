@@ -23,7 +23,7 @@ function Signup() {
   const { email, password } = values;
 
   if (uid) {
-    return <Redirect to="/" />;
+    return <Redirect to="/dashboard" />;
   }
   return (
     <MyForm onSubmit={handleSubmit}>
