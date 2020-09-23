@@ -34,7 +34,7 @@ const AuthIsLoaded = ({ children }) => {
           loading={isLoaded}
           color={"#f56a79"}
           width={"100%"}
-          height={"5"}
+          height={5}
         />
       </div>
     );
