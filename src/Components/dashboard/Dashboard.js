@@ -14,7 +14,7 @@ function Dashboard() {
       </>
     );
   }
-  return <Redirect to="/signin" />;
+  return <Redirect to="/todo/signin/" />;
 }
 
 export default Dashboard;
