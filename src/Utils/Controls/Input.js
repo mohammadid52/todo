@@ -1,18 +1,19 @@
+import { TextField } from "@material-ui/core";
 import React from "react";
-import { Form } from "react-bootstrap";
 
-const Input = ({ label, name, value, type, placeholder, onChange }) => {
+const Input = ({ label, name, value, onChange, ...rest }) => {
   return (
-    <Form.Group className="mt-4">
-      <Form.Label>{label}</Form.Label>
-      <Form.Control
-        name={name}
-        value={value}
-        type={type || "email"}
-        placeholder={placeholder}
-        onChange={onChange}
-      />
-    </Form.Group>
+    <TextField
+      variant="outlined"
+      margin="normal"
+      required
+      fullWidth
+      label={label}
+      name={name}
+      value={value}
+      onChange={onChange}
+      {...rest}
+    />
   );
 };
 export default Input;

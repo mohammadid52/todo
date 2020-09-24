@@ -2,36 +2,46 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../../Redux/actions/authActions";
+import { Button, List, ListItem, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& MuiButtonBase-root": {
+      color: "#fff",
+    },
+  },
+}));
 
 function NavItems() {
+  const classes = useStyles();
   const dispatch = useDispatch();
   const { uid, email } = useSelector((state) => state.firebase.auth);
   if (uid) {
     return (
-      <>
-        <Link
-          to="/signin"
-          className="nav-link"
+      <div className={classes.root}>
+        <Button
+          component={Link}
+          to={"logout"}
           onClick={() => {
             dispatch(signOut());
           }}
         >
           Logout
-        </Link>
+        </Button>
 
         <p className="mt-3">{email}</p>
-      </>
+      </div>
     );
   }
   return (
-    <>
-      <Link to="/signin" className="nav-link">
+    <div className={classes.root}>
+      <Button component={Link} to={"signin"} variant="outlined">
         Signin
-      </Link>
-      <Link to="/signup" className="nav-link">
+      </Button>
+      <Button component={Link} to={"signup"} variant="outlined">
         Signup
-      </Link>
-    </>
+      </Button>
+    </div>
   );
 }
 

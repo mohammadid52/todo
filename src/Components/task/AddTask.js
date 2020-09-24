@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import { useForm, Form as MyForm } from "../../Utils/useForm";
 import Controls from "../../Utils/Controls";
 import { addTask } from "../../Redux/actions/taskActions";
@@ -21,19 +20,19 @@ const AddTask = () => {
 
   return (
     <MyForm onSubmit={handleSubmit}>
-      <h1>Add Task</h1>
+      <h1>Your Tasks</h1>
       <Controls.Input
         label="Add Task"
         name="task"
         value={task}
-        placeholder="Enter Some Task"
         onChange={handleInputChange}
-        type="text"
       />
 
-      <Button variant="primary" type="submit">
-        Add Task
-      </Button>
+      <Controls.Button
+        label="Add"
+        style={{ marginTop: ".5rem" }}
+        onClick={() => dispatch(addTask(values))}
+      />
     </MyForm>
   );
 };

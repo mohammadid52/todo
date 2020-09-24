@@ -1,7 +1,11 @@
 export const addTask = (task) => {
   return (dispatch, getState, { getFirebase }) => {
+    const { uid } = getState().firebase.auth;
     const firestore = getFirebase().firestore();
+
     firestore
+      .collection("users")
+      .doc(uid)
       .collection("tasks")
       .add({
         ...task,
@@ -25,7 +29,11 @@ export const addTask = (task) => {
 export const removeTask = (id) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
+    const { uid } = getState().firebase.auth;
+
     firestore
+      .collection("users")
+      .doc(uid)
       .collection("tasks")
       .doc(id)
       .delete()
@@ -45,7 +53,11 @@ export const removeTask = (id) => {
 export const toggleCheck = (task) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
+    const { uid } = getState().firebase.auth;
+
     firestore
+      .collection("users")
+      .doc(uid)
       .collection("tasks")
       .doc(task.id)
       .set(

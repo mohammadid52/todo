@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form as ReactForm } from "react-bootstrap";
+import { Container } from "@material-ui/core";
 
 export const useForm = (initialValue) => {
   const [values, setValues] = useState(initialValue);
@@ -19,8 +20,8 @@ export const useForm = (initialValue) => {
 
 export const Form = ({ children, ...rest }) => {
   return (
-    <ReactForm className="container mt-4" autoComplete="off" {...rest}>
-      {children}
+    <ReactForm className="mt-4" autoComplete="off" {...rest}>
+      <Container>{children}</Container>
     </ReactForm>
   );
 };

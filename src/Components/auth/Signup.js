@@ -1,10 +1,11 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import { useForm, Form as MyForm } from "../../Utils/useForm";
 import Controls from "../../Utils/Controls";
 import { useDispatch, useSelector } from "react-redux";
-import { signUp } from "../../Redux/actions/authActions";
+import { signInWithGoogle, signUp } from "../../Redux/actions/authActions";
 import { Redirect } from "react-router-dom";
+import LockOpenSharpIcon from "@material-ui/icons/LockOpenSharp";
+import PersonOutlineSharpIcon from "@material-ui/icons/PersonOutlineSharp";
 
 const initialValue = {
   email: "",
@@ -30,6 +31,7 @@ function Signup() {
       <h1>Signup</h1>
       <Controls.Input
         label="Email Address"
+        autoFocus={true}
         name="email"
         value={email}
         placeholder="Enter Email Address"
@@ -38,19 +40,25 @@ function Signup() {
       <Controls.Input
         label="Password"
         name="password"
-        type="password"
         value={password}
         placeholder="Enter Password"
         onChange={handleInputChange}
+        type="password"
       />
       <div className="d-flex">
-        <Button variant="primary" type="submit" className="mr-2">
-          Signup
-        </Button>
-
-        <Button variant="primary" type="submit" className="ml-2">
-          Sign-up with Google
-        </Button>
+        <Controls.Button
+          icon={<PersonOutlineSharpIcon />}
+          style={{ marginTop: ".6rem" }}
+          label="Sign Up"
+          type="submit"
+        />
+        <Controls.Button
+          icon={<LockOpenSharpIcon />}
+          onClick={() => dispatch(signInWithGoogle())}
+          label="Sign-In with Google"
+          color="secondary"
+          style={{ marginTop: ".6rem", marginLeft: ".6rem" }}
+        />
       </div>
     </MyForm>
   );

@@ -3,7 +3,7 @@ const initialState = {};
 const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TASK":
-      toast.success("😄 Task Added");
+      toast.success("😄   Task Added");
       return state;
 
     case "ADD_TASK_ERROR":
@@ -11,7 +11,7 @@ const taskReducer = (state = initialState, action) => {
       return state;
 
     case "REMOVE_TASK":
-      toast.warn("😋 Task Deleted Successfully");
+      toast.warn("😋   Task Deleted Successfully");
       return state;
 
     case "REMOVE_TASK_ERROR":
@@ -19,7 +19,7 @@ const taskReducer = (state = initialState, action) => {
       return state;
 
     case "TOGGLE_CHECKED":
-      toast.info("😇 Status Changed");
+      toast.info("😇   Status Changed");
       return state;
 
     case "TOGGLE_CHECKED_ERROR":

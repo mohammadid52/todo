@@ -12,7 +12,8 @@ import firebase from "./Config/firebaseConfig";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BarLoader from "react-spinners/BarLoader";
-
+import { ThemeProvider } from "@material-ui/core";
+import { theme } from "./theme";
 const rrfConfig = {
   userProfile: "users",
   useFirestoreForProfile: true,
@@ -32,7 +33,7 @@ const AuthIsLoaded = ({ children }) => {
       <div>
         <BarLoader
           loading={isLoaded}
-          color={"#f56a79"}
+          color={"#07689f"}
           width={"100%"}
           height={5}
         />
@@ -48,12 +49,13 @@ ReactDOM.render(
         <BrowserRouter>
           <ToastContainer
             hideProgressBar={true}
-            autoClose={2000}
+            autoClose={1000}
             newestOnTop={true}
-            limit={1}
           />
           <AuthIsLoaded>
-            <App />
+            <ThemeProvider theme={theme}>
+              <App />
+            </ThemeProvider>
           </AuthIsLoaded>
         </BrowserRouter>
       </ReactReduxFirebaseProvider>

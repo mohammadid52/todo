@@ -7,6 +7,12 @@ const authReducer = (state = {}, action) => {
     case "SIGN_IN_ERROR":
       toast.error("An error occured");
       return state;
+    case "SIGN_IN_WITH_GOOGLE":
+      toast.success("Welcome back....");
+      return state;
+    case "SIGN_IN_WITH_GOOGLE_ERROR":
+      toast.error("An error occured");
+      return state;
     case "SIGN_OUT":
       toast.warn("You signed Out");
       return state;
