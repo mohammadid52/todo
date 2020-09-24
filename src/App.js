@@ -10,7 +10,7 @@ function App() {
     <>
       <MenuAppBar />
       <Switch>
-        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/todo" component={Dashboard} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/signup" component={Signup} />
       </Switch>
